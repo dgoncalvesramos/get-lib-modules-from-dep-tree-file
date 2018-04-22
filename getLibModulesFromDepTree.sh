@@ -7,24 +7,24 @@ then
 	-v) version=1
 	;;
 	*) echo "Usage ./getSubModules.sh [-v] lib depfile" 
-		  exit 0 
+		  exit 1 
 	;;
 	esac
 	if [ ! -e $3 ]
 	then
 		echo "Depfile $3 does not exist"
-		exit 0
+		exit 1
 	fi
 elif [[ $# -eq 2 ]]
 then
 	if [ ! -e $2 ]
 	then 
 		echo "Depfile $2 does not exist"
-		exit 0
+		exit 1
 	fi
 else 
 	echo "Usage ./getSubModules.sh [-v] lib depfile"
-	exit 0
+	exit 1
 fi
 
 if [ ! -z "$version" ]
